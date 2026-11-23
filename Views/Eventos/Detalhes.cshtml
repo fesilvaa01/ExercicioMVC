@@ -1,0 +1,39 @@
+@model PrimeiroProjetoMVC.Models.Evento
+
+@{
+    ViewData["Title"] = "Detalhes do Evento";
+}
+
+<h2>Detalhes do Evento</h2>
+<hr />
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">@Model.Nome</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">ID do Evento</dt>
+            <dd class="col-sm-9">#@Model.Id</dd>
+
+            <dt class="col-sm-3">Descrição</dt>
+            <dd class="col-sm-9">@Model.Descricao</dd>
+
+            <dt class="col-sm-3">Local</dt>
+            <dd class="col-sm-9">@Model.Local</dd>
+
+            <dt class="col-sm-3">Data e Hora</dt>
+            <dd class="col-sm-9">@Model.DataEvento.ToString("dd/MM/yyyy 'às' HH:mm")</dd>
+
+            <dt class="col-sm-3">Quantidade de Vagas</dt>
+            <dd class="col-sm-9">@Model.QuantidadeVagas vagas</dd>
+
+            <dt class="col-sm-3">Valor do Ingresso</dt>
+            <dd class="col-sm-9">@Model.ValorIngresso.ToString("C")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+        <a asp-action="Buscar" class="btn btn-outline-primary">Ir para Busca</a>
+    </div>
+</div>
